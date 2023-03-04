@@ -15,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText userInput = findViewById(R.id.editText_matriculation_number);
-        Button submit = findViewById(R.id.button_submit);
-        //TextView solution = findViewById(R.id.text_solution);
+        EditText userInput = findViewById(R.id.et_main_matriculationNumber);
+        Button submit = findViewById(R.id.btn_main_submit);
+        //TextView solution = findViewById(R.id.tv_main_serverAnswer);
 
         submit.setOnClickListener(view -> {
             TCPClient client = new TCPClient(userInput.getText().toString());

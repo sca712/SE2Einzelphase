@@ -5,46 +5,46 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_header"
+        android:id="@+id/tv_main_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="@string/header"
+        android:text="@string/main_header"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText_matriculation_number"
+        android:id="@+id/et_main_matriculationNumber"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
-        android:hint="@string/matriculation_number"
+        android:autofillHints="matriculationNumber"
+        android:hint="@string/main_matriculationNumber"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_header"
-        android:autofillHints="matriculationNumber" />
+        app:layout_constraintTop_toBottomOf="@id/tv_main_header" />
 
     <TextView
-        android:id="@+id/text_solution"
+        android:id="@+id/tv_main_serverAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text=""
         android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_main_submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_matriculation_number"
-        app:layout_constraintBottom_toTopOf="@id/button_submit" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_main_matriculationNumber" />
 
     <Button
-        android:id="@+id/button_submit"
+        android:id="@+id/btn_main_submit"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginBottom="100dp"
-        android:text="@string/submit"
+        android:text="@string/main_submit"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
