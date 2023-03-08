@@ -18,14 +18,19 @@ public class MainActivity extends AppCompatActivity {
 
         EditText userInput = findViewById(R.id.et_main_matriculationNumber);
         Button submit = findViewById(R.id.btn_main_submit);
-        TextView solution = findViewById(R.id.tv_main_serverAnswer);
+        TextView serverAnswer = findViewById(R.id.tv_main_serverAnswer);
+        TextView solution = findViewById(R.id.tv_main_solution);
 
         submit.setOnClickListener(view -> {
             TCPClient client = new TCPClient(userInput.getText().toString());
+            SolutionCalculation solutionCalculation = new SolutionCalculation(userInput.getText().toString());
             client.start();
+            solutionCalculation.start();
             try {
                 client.join();
-                solution.setText(client.getServerAnswer());
+                serverAnswer.setText(client.getServerAnswer());
+                solutionCalculation.join();
+                solution.setText(solutionCalculation.getSolution());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

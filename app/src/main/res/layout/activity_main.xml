@@ -35,10 +35,24 @@
         android:text=""
         android:textSize="12sp"
         android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@id/btn_main_submit"
+        app:layout_constraintBottom_toTopOf="@+id/tv_main_solution"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_main_matriculationNumber" />
+
+    <TextView
+        android:id="@+id/tv_main_solution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text=""
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/btn_main_submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_main_serverAnswer" />
+
 
     <Button
         android:id="@+id/btn_main_submit"
