@@ -1,6 +1,7 @@
 package com.example.networktest;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class SolutionCalculation extends Thread {
     private String matriculationNumber;
@@ -9,19 +10,18 @@ public class SolutionCalculation extends Thread {
     public SolutionCalculation(String matriculationNumber) {
         this.matriculationNumber = matriculationNumber;
     }
-
     public void run() {
-        int[] matriculationNumberArray = convertStringToIntArray(matriculationNumber);
-        Arrays.sort(matriculationNumberArray);
-        solution = Arrays.toString(matriculationNumberArray);
+        ArrayList<Integer> matriculationNumberArrayList = convertStringToIntArrayList(matriculationNumber);
+        Collections.sort(matriculationNumberArrayList);
+        solution = matriculationNumberArrayList.toString();
     }
 
-    public int[] convertStringToIntArray(String matriculationNumber) {
-        int[] numberArray = new int[matriculationNumber.length()];
-        for (int i = 0; i < numberArray.length; i++) {
-            numberArray[i] = Character.getNumericValue(matriculationNumber.charAt(i));
+    public ArrayList<Integer> convertStringToIntArrayList(String matriculationNumber) {
+        ArrayList<Integer> numberArrayList = new ArrayList<>();
+        for (int i = 0; i < matriculationNumber.length(); i++) {
+            numberArrayList.add(Character.getNumericValue(matriculationNumber.charAt(i)));
         }
-        return numberArray;
+        return numberArrayList;
     }
 
     public String getSolution() {
