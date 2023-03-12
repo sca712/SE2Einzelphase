@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 
 public class TCPClient extends Thread {
-    private String matriculationNumber;
+    private final String matriculationNumber;
     private String serverAnswer;
 
     public TCPClient(String matriculationNumber) {

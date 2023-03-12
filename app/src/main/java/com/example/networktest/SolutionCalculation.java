@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class SolutionCalculation extends Thread {
-    private String matriculationNumber;
+    private final String matriculationNumber;
     private String solution;
 
     public SolutionCalculation(String matriculationNumber) {
@@ -51,7 +51,6 @@ public class SolutionCalculation extends Thread {
         }
         return true;
     }
-
 
     public String getSolution() {
         return solution;
